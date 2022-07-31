@@ -6,3 +6,9 @@
               defaultzone: http://localhost:8761/eureka/
               instance:
                 hostname: localhost
+
+microservice:
+  STUDENT-WRAPPER:
+  endpoints:
+  endpoint:
+  uri: http://STUDENT-WRAPPER/do-student
