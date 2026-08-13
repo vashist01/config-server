@@ -2,9 +2,22 @@ server:
   port: 8888
 
 spring:
+  application:
+    name: config-server
+
+  profiles:
+    active: composite
+
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/vashist01/config-server
-          default-label: master
+        composite:
+
+          # 1. LOCAL - highest priority
+          - type: native
+            search-locations: classpath:/config/
+
+          # 2. GITHUB - lower priority
+#          - type: git
+#            uri: https://github.com/vashist01/config-server
+#            default-label: master
