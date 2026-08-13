@@ -7,4 +7,4 @@ spring:
       server:
         git:
           uri: https://github.com/vashist01/config-server
-          default-label: master
+          default-label: main
