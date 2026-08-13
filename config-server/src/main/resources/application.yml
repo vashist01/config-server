@@ -20,4 +20,5 @@ spring:
           # 2. GITHUB - lower priority
 #          - type: git
 #            uri: https://github.com/vashist01/config-server
-#            default-label: master
+##            branch location
+#            default-label: config-server
