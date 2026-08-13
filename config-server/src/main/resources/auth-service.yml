@@ -1,23 +1,16 @@
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,info,metrics,prometheus
-  metrics:
-    export:
-      prometheus:
-        enabled: true
+api:
+  version: v1
 
-logging:
-  level:
-    com.banking: DEBUG
-    org.springframework.security: INFO
-    org.springframework.web: INFO
-    org.springframework.cache: TRACE
-    org.hibernate.SQL: TRACE
+spring:
+  profiles:
+    active: local
 
-springdoc:
-  api-docs:
-    path: /v3/api-docs
-  swagger-ui:
-    path: /swagger-ui.html
+  datasource:
+    url: jdbc:mysql://mysql:3306/auth_db?createDatabaseIfNotExist=true
+    username: root
+    password: root123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update

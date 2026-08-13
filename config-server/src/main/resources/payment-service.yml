@@ -1,0 +1,26 @@
+server:
+  port: 8009
+
+spring:
+  application:
+    name: PAYMENT-SERVICE
+
+  datasource:
+  # payment DB
+    url: jdbc:mysql://localhost:3306/payment_db?createDatabaseIfNotExist=true
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  kafka:
+    consumer:
+      group-id: payment-service-group
+
+outbox:
+  scheduler:
+    delay: 5s
+
+razor:
+  key-id: ${RAZOR_KEY_ID}
+  key-secret: ${RAZOR_KEY_SECRET}

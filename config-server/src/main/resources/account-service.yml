@@ -93,9 +93,7 @@ resilience4j:
   bulkhead:
     instances:
       customer-service:
-
         maxConcurrentCalls: 5
-
         maxWaitDuration: 2s
 
 #############################################################
