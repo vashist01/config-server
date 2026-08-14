@@ -1,4 +1,22 @@
 spring:
-  kafka:
-    consumer:
-      group-id: audit-service-group
+    application:
+      name: audit-service
+    datasource:
+      url: jdbc:postgresql://localhost:5432/audit_db
+      username: {DB_POSTGRES_USER}
+      password: {DB_POSTGRES_PASSWORD}
+      driver-class-name: org.postgresql.Driver
+    jpa:
+      hibernate:
+        ddl-auto: update
+      show-sql: false
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          format_sql: true
+
+    kafka:
+      bootstrap-servers: kafka:9002
+      consumer:
+        group-id: audit-service-group
+        auto-offset-reset: false
